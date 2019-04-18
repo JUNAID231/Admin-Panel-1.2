@@ -1,0 +1,43 @@
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+        <div class="container mt-3 ">
+            <center><h1>Transactions Detail</h1></center>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>From WalletID</th>
+                        <th>To WalletID</th>
+                        <th>To Email</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Timestamp</th>
+                        <th>Code</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                {% for transection in transection %}
+                <tr>
+                    <td>{{ transection.id }}</td>
+                    <td>{{ transection.from_walletID }}</td>
+                    <td>{{ transection.to_walletID }}</td>
+                    <td>{{ transection.to_emailaddress }}</td>
+                    <td>{{ transection.amount }}</td>
+                    <td>{{ transection.status }}</td>
+                    <td>{{ transection.timestamp }}</td>
+                    <td>{{ transection.transaction_code }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>        
+    
+    

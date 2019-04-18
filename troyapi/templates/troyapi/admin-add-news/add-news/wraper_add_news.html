@@ -1,0 +1,110 @@
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Add News</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                
+                        <div class="form-row">
+                            <div class="name">News Type</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search" style="width: inherit;" >
+                                        <select name="category">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option>Business</option>
+                                            <option>Technology</option>
+                                            <option>Sport</option>
+                                            <option>Weather</option>
+                                            <option>Crime</option>
+                                        </select>
+                                    <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Title</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="title">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Short Description</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="short-description">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row ">
+                            <div class="name">Long Description</div>
+                            <div class="value">
+                                <div class="form-group">
+                                    <textarea class="form-control bg-textarea" rows="10"   id="long-description" name="long-description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Picture</div>
+                            <div class="value">
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input" id="customFile" name="filename">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Auther</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="auther">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                        </div>
+                        </br>
+                        {% if IS_ERROR == True %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>{{ ERROR }}</strong> {{ CONTEXT }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+
+                        {% if IS_SUCCESS == True %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ SUCCESS }}</strong> {{ CONTEXT }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

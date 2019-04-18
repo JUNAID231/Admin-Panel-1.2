@@ -1,0 +1,41 @@
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+<!-- ============================================================== -->
+<!-- pageheader  -->
+<!-- ============================================================== -->
+    <div class="container mt-3 ">   
+        <center><h1>Admin Detail</h1></center>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Suspend</th>
+                    <th>Timestamp</th>
+                    <th colspan="2" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for admin in admin %}
+            <tr>
+                <td>{{ admin.admin_id }}</td>
+                <td>{{ admin.firstname }}</td>
+                <td>{{ admin.lastname }}</td>
+                <td>{{ admin.emailaddress }}</td>
+                <td>{{ admin.suspend }}</td>
+                <td>{{ admin.timestamp }}</td>
+                <td> <a href="/removeadmin/{{ admin.admin_id }}/" class="btn btn-danger btn-sm p-1">Delete</a> </td>
+                <td> <a href="/edit/Admin/{{ admin.admin_id }}/" class="btn btn-info btn-sm p-1">Edit</a> </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>        
+        
+        

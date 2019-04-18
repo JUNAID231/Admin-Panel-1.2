@@ -1,0 +1,51 @@
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper ">
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
+    <div class="container mt-3 " >        
+        <center><h1>News Detail</h1></center>
+        
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Short Description</th>
+                    <th>Long Description</th>
+                    <th>Auther</th>
+                    <th>Timestamp</th>
+                    <th colspan="2" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for news in news %}
+            <tr>
+                <td>{{ news.news_id }}</td>
+                <td>{{ news.category }}</td>
+                <td>{{ news.title }}</td>
+                <td>{{ news.short_description }}</td>
+                <td>{{ news.long_description }}</td>
+                <td>{{ news.auther }}</td>
+                <td>{{ news.timestamp }}</td>
+                <td> 
+                    <a href="/remove/{{ news.news_id }}/" class="btn btn-danger btn-sm p-1">Delete</a> 
+                </td>
+                <td>  
+                    <a href="/testing/{{ news.news_id }}/" class="btn btn-info btn-sm p-1" name="newsid" >Edit</a> 
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+       
+
+        
+    </div>
+</div>        
+        
+        

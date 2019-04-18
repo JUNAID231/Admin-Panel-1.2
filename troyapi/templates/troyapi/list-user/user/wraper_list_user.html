@@ -1,0 +1,44 @@
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
+        <div class="container mt-3 ">   
+            <center><h1>Users Detail</h1></center>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Wallet ID</th>
+                        <th>Token</th>
+                        <th>Timestamp</th>
+                        <th colspan="2" class="text-center">Actions</th>
+    
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in user %}
+                <tr>
+                    <td>{{ user.user_id }}</td>
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.emailaddress }}</td>
+                    <td>{{ user.wallet_id }}</td>
+                    <td>{{ user.signin_token }}</td>
+                    <td>{{ user.signin_timestamp }}</td>
+                    <td> <a href="/removeuser/{{ user.user_id }}/" class="btn btn-danger btn-sm p-1">Delete</a> </td>
+                    <td> <a href="/edit/User/{{ user.user_id }}/" class="btn btn-info btn-sm p-1 ">Edit</a> </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>        
+        
+        
